@@ -6,9 +6,9 @@ Version: 1.0
 Author: Andrew Kennel
 Author URI: localhost/wordpress
 */
-add_shortcode('PhilaPay', 'widget_handler');
+add_shortcode('PhilaPay', 'philapay_handler');
 
-function widget_handler(){
+function philapay_handler(){
     $message = <<<EOM
 
   <div id="PayWidget" style="background-color: #FAFAFA; border-radius: 10px; padding: 10px">
@@ -47,10 +47,10 @@ EOM;
 return $message;
 }
 
-function widget($args, $instance) { // widget sidebar output
+function philapaywidget($args, $instance) { // widget sidebar output
   extract($args, EXTR_SKIP);
   echo $before_widget; // pre-widget code from theme
-  echo widget_handler();
+  echo philapay_handler();
   echo $after_widget; // post-widget code from theme
 }
 ?>
