@@ -6,27 +6,12 @@ Version: 1.0
 Author: Andrew Kennel
 Author URI: localhost/wordpress
 */
+add_shortcode('PhilaPay', 'widget_handler');
 
-class PhilaPayWidget extends WP_Widget {
-          function PhilaPayWidget() {
-                    $widget_ops = array(
-                    'classname' => 'PhilaPayWidget',
-                    'description' => 'Phila Pay Widget'
-          );
+function widget_handler(){
+    $message = <<<EOM
 
-          $this->WP_Widget(
-                    'PhilaPayWidget',
-                    'Phila Pay Widget',
-                    $widget_ops
-          );
-}
-
-          function widget($args, $instance) { // widget sidebar output
-                    extract($args, EXTR_SKIP);
-                    echo $before_widget; // pre-widget code from theme
-print <<<EOM
-
-<div id="PayWidget" style="background-color: #FAFAFA; border-radius: 10px; padding: 10px">
+  <div id="PayWidget" style="background-color: #FAFAFA; border-radius: 10px; padding: 10px">
     <h4>Pay</h4>
     <div class="widgetBodyText">
     With so many options, it's easy to pay on time.
@@ -55,15 +40,17 @@ print <<<EOM
                     </select>
         </div>
     </div>
-</div>
+  </div>
 
 EOM;
-                    echo $after_widget; // post-widget code from theme
-          }
+
+return $message;
 }
 
-add_action(
-          'widgets_init',
-          create_function('','return register_widget("PhilaPayWidget");')
-);
+function widget($args, $instance) { // widget sidebar output
+  extract($args, EXTR_SKIP);
+  echo $before_widget; // pre-widget code from theme
+  echo widget_handler();
+  echo $after_widget; // post-widget code from theme
+}
 ?>
