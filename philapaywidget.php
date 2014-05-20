@@ -17,7 +17,7 @@ function philapay_handler(){
     With so many options, it's easy to pay on time.
         <div class="dropDown">
             <select rows="2" name="jumpMenu" id="jumpMenu" onchange="javascript:document.location = this.value;">
-                    <option value="/pages/default.aspx">Select</option>
+                    <option value="/pages/default.aspx">Select Payment Option...</option>
                     
                     <option value="https://wmq.etimspayments.com/pbw/include/philadelphia_alarms/input.jsp">Alarm Registration/Fines</option>
                     
