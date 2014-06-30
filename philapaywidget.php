@@ -79,6 +79,13 @@ $message = <<<EOM
 		</div>
 	</span>
 </div>
+<div id="PhilaReportWidget" class="PhilaWidget">
+	<span id="PhilaReportMainWindow">
+		 <a href="http://www.phila.gov/ig/Pages/ReportWrongdoing.aspx">Report Fraud/Corruption</a>
+		 <a href="http://phillypolice.com/forms/submit-a-tip">Submit a Police Tip</a>
+		 <a href="http://potholes.phila.gov/tap.nsf/d15d032a30a36768852578850008337c?OpenForm">Report a Pothole</a>		 
+	</span>
+</div>
 
     
 EOM;
